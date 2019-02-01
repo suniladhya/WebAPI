@@ -13,9 +13,9 @@ namespace CountingKs
         {
             config.Routes.MapHttpRoute(
           name: "Food",
-          routeTemplate: "api/nutrition/food/{id}",
-          defaults: new {controller= "foods", foodId = RouteParameter.Optional }
-          constraints:new {id="/d+"}
+          routeTemplate: "api/nutrition/food/{foodId}",
+          defaults: new {controller= "foods", foodId = RouteParameter.Optional },
+          constraints:new { foodId = "/d+"}
       );
             //      config.Routes.MapHttpRoute(
             //    name: "DefaultApi",
