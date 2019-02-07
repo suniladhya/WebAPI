@@ -7,16 +7,31 @@ using System.Web.Http;
 
 namespace CountingKs
 {
+
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
         {
             config.Routes.MapHttpRoute(
-          name: "FoodApi",
-          routeTemplate: "api/nutrition/foods/{foodId}",
-          defaults: new { controller = "foods", foodId = RouteParameter.Optional },
-          constraints: new { foodId = @"\d+" }
-      );
+        name: "FoodListApi",
+        routeTemplate: "api/nutrition/foods",
+        defaults: new { controller = "foods"}
+        //constraints: new { foodId = @"\d+" }
+    );
+
+      //      config.Routes.MapHttpRoute(
+      //    name: "FoodApi",
+      //    routeTemplate: "api/nutrition/foods/{foodId}",
+      //    defaults: new { controller = "foods", foodId = RouteParameter.Optional },
+      //    constraints: new { foodId = @"\d+" }
+      //);
+      
+            config.Routes.MapHttpRoute(
+      name: "FoodApi",
+      routeTemplate: "api/nutrition/foods/{foodId}",
+      defaults: new { controller = "foods" },
+      constraints: new { foodId = @"\d+" }
+  );
             config.Routes.MapHttpRoute(
       name: "Measures",
       routeTemplate: "api/nutrition/foods/{foodId}/measures/{id}",
