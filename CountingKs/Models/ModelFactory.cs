@@ -1,4 +1,5 @@
 ﻿using CountingKs.Data.Entities;
+using CountingKs.Models.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,11 @@ namespace CountingKs.Models
                 Description = m.Description,
                 Calories = Math.Round(m.Calories)
             };
+        }
+
+        internal DiaryModel Create(Diary d)
+        {
+            throw new NotImplementedException();
         }
     }
 }
