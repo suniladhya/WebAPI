@@ -35,6 +35,12 @@ var jsonFormatter = config.Formatters.OfType<JsonMediaTypeFormatter>().FirstOrDe
  
  ### Routing vs. parameter
  
+     config.Routes.MapHttpRoute(
+                name: "FoodApi",
+                routeTemplate: "api/nutrition/foods/{foodId}",
+                defaults: new { controller = "foods" },
+                constraints: new { foodId = @"\d+" }
+            );
  
  
   
